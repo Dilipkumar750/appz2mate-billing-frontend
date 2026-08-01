@@ -2,6 +2,9 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
+// Set production API base URL from env
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
+
 const AppContext = createContext();
 
 export const useApp = () => useContext(AppContext);
